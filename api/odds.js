@@ -173,7 +173,11 @@ module.exports = async function handler(req, res) {
     if (len > MAX_PAYLOAD) return res.status(502).json({ error: 'payload_too_large' });
 
     if (upstream.status === 429) return res.status(429).json({ error: 'upstream_rate_limited' });
-    if (!upstream.ok)            return res.status(502).json({ error: 'upstream_error' });
+    if (!upstream.ok) {
+      const errBody = await upstream.text().catch(() => '');
+      console.error('[odds] upstream error', upstream.status, errBody.slice(0, 300));
+      return res.status(502).json({ error: 'upstream_error', upstream_status: upstream.status });
+    }
 
     const text = await upstream.text();
     if (text.length > MAX_PAYLOAD) return res.status(502).json({ error: 'payload_too_large' });
