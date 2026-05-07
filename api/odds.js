@@ -21,7 +21,7 @@ const ODDS_API_KEY    = process.env.ODDS_API_KEY || '';
 const ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS || '')
   .split(',').map(s => s.trim()).filter(Boolean);
 
-const UPSTREAM           = 'https://api.the-odds-api.com/v4/sports';
+const UPSTREAM           = 'https://api.theoddsapi.com';
 const MAX_PAYLOAD        = 5 * 1024 * 1024;  // 5 MB
 const UPSTREAM_TIMEOUT   = 10_000;           // 10 s
 
@@ -153,8 +153,8 @@ module.exports = async function handler(req, res) {
     return res.status(400).json({ error: 'invalid_market' });
   }
 
-  const url = new URL(`${UPSTREAM}/${encodeURIComponent(sport)}/odds`);
-  url.searchParams.set('apiKey',     ODDS_API_KEY);
+  const url = new URL(`${UPSTREAM}/odds/`);
+  url.searchParams.set('sport_key',  sport);
   url.searchParams.set('regions',    region);
   url.searchParams.set('markets',    marketList.join(','));
   url.searchParams.set('oddsFormat', 'american');
@@ -166,7 +166,7 @@ module.exports = async function handler(req, res) {
     const upstream = await fetch(url, {
       method: 'GET',
       signal: ctrl.signal,
-      headers: { 'Accept': 'application/json' },
+      headers: { 'Accept': 'application/json', 'x-api-key': ODDS_API_KEY },
     });
 
     const len = Number(upstream.headers.get('content-length') || 0);
