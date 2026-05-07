@@ -110,16 +110,36 @@ function sanitizeBookmaker(b) {
 }
 function sanitizeGame(g) {
   if (!g || typeof g !== 'object') return null;
-  const id = typeof g.id === 'string' && /^[a-zA-Z0-9_-]{1,64}$/.test(g.id) ? g.id : null;
+  const rawId = g.event_id || g.id || '';
+  const id = typeof rawId === 'string' && /^[a-zA-Z0-9_-]{1,64}$/.test(rawId) ? rawId : null;
   if (!id) return null;
-  const books = Array.isArray(g.bookmakers) ? g.bookmakers.slice(0, 5) : [];
+
+  // theoddsapi.com returns flat books[] grouped by book+market — restructure into bookmakers[]
+  const booksMap = {};
+  (g.books || []).forEach(b => {
+    const key = clamp(b.book, 32);
+    if (!key) return;
+    if (!booksMap[key]) booksMap[key] = { key, title: key, last_update: clamp(b.updated_at || '', 32), markets: {} };
+    const mkt = clamp(b.market, 32);
+    if (!mkt) return;
+    if (!booksMap[key].markets[mkt]) booksMap[key].markets[mkt] = { key: mkt, last_update: clamp(b.updated_at || '', 32), outcomes: [] };
+    (b.outcomes || []).forEach(o => {
+      if (!o?.name || o.price == null) return;
+      booksMap[key].markets[mkt].outcomes.push({ name: clamp(String(o.name), 64), price: num(o.price), point: o.point != null ? num(o.point) : null });
+    });
+  });
+  const bookmakers = Object.values(booksMap).slice(0, 10).map(bk => ({
+    key: bk.key, title: bk.title, last_update: bk.last_update,
+    markets: Object.values(bk.markets).map(sanitizeMarket).filter(Boolean),
+  }));
+
   return {
     id,
-    sport_key:     clamp(g.sport_key, 64),
-    commence_time: clamp(g.commence_time, 32),
+    sport_key:     clamp(g.sport_key || g.sport || '', 64),
+    commence_time: clamp(g.start_time || g.commence_time || '', 32),
     home_team:     clamp(g.home_team, 64),
     away_team:     clamp(g.away_team, 64),
-    bookmakers:    books.map(sanitizeBookmaker).filter(Boolean),
+    bookmakers,
   };
 }
 
@@ -186,12 +206,16 @@ module.exports = async function handler(req, res) {
     try { data = JSON.parse(text); }
     catch { return res.status(502).json({ error: 'upstream_invalid' }); }
 
-    if (!Array.isArray(data)) {
-      console.error('[odds] unexpected shape, keys:', Object.keys(data || {}).join(','), JSON.stringify(data).slice(0, 200));
+    // theoddsapi.com wraps response in {success, data: [...]}
+    const rawGames = Array.isArray(data) ? data
+      : (data?.success && Array.isArray(data?.data)) ? data.data
+      : null;
+    if (!rawGames) {
+      console.error('[odds] unexpected shape:', JSON.stringify(data).slice(0, 200));
       return res.status(502).json({ error: 'upstream_invalid' });
     }
 
-    const sanitized = data.slice(0, 100).map(sanitizeGame).filter(Boolean);
+    const sanitized = rawGames.slice(0, 100).map(sanitizeGame).filter(Boolean);
     return res.status(200).json({ sport, count: sanitized.length, games: sanitized });
   } catch (err) {
     if (err?.name === 'AbortError') {
