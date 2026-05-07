@@ -186,7 +186,10 @@ module.exports = async function handler(req, res) {
     try { data = JSON.parse(text); }
     catch { return res.status(502).json({ error: 'upstream_invalid' }); }
 
-    if (!Array.isArray(data)) return res.status(502).json({ error: 'upstream_invalid' });
+    if (!Array.isArray(data)) {
+      console.error('[odds] unexpected shape, keys:', Object.keys(data || {}).join(','), JSON.stringify(data).slice(0, 200));
+      return res.status(502).json({ error: 'upstream_invalid' });
+    }
 
     const sanitized = data.slice(0, 100).map(sanitizeGame).filter(Boolean);
     return res.status(200).json({ sport, count: sanitized.length, games: sanitized });
