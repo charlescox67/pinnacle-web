@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; manifest-src 'self'; upgrade-insecure-requests">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>Pricing — Pinnacle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="grain"></div>
+<div id="site-nav"></div>
+
+<section class="page-hero container" style="text-align:center">
+  <span class="eyebrow">PRICING</span>
+  <h1 style="margin-left:auto;margin-right:auto">Pay for the<br><em>edge.</em> Not the app.</h1>
+  <p style="margin-left:auto;margin-right:auto">Free to start. Upgrade when the math starts paying for itself. No long-term contracts. Cancel anytime.</p>
+
+  <div class="toggle" data-billing-toggle>
+    <button type="button" class="on" data-period="monthly">Monthly</button>
+    <button type="button" data-period="yearly">Yearly <span class="save">-20%</span></button>
+  </div>
+</section>
+
+<section class="tiers container">
+  <div class="tier-grid">
+
+    <div class="tier">
+      <div class="tier-name">FREE</div>
+      <div class="tier-amt">$0</div>
+      <div class="tier-desc">For curious bettors getting their feet wet.</div>
+      <a href="signup.html" rel="noopener noreferrer" class="btn btn-ghost tier-cta">Get started</a>
+      <ul>
+        <li>3 sports (NBA, NFL, MLB)</li>
+        <li>3 sportsbooks compared</li>
+        <li>Basic odds grid</li>
+        <li>Delayed line history (15 min)</li>
+        <li class="x">No EV scoring</li>
+        <li class="x">No arb detection</li>
+        <li class="x">No CLV tracker</li>
+      </ul>
+    </div>
+
+    <div class="tier featured">
+      <div class="tier-name">PRO &middot; MOST POPULAR</div>
+      <div class="tier-amt"><span data-monthly="9.99" data-yearly="7.99">$9.99</span> <small>/ mo</small></div>
+      <div class="tier-desc">For serious recreational players who treat it like an investment.</div>
+      <a href="signup.html?tier=pro" rel="noopener noreferrer" class="btn btn-primary tier-cta">Start 14-day trial</a>
+      <ul>
+        <li>All 10 sports</li>
+        <li>All 15+ sportsbooks</li>
+        <li>+EV scoring on every market</li>
+        <li>Arbitrage detection</li>
+        <li>Real-time line movement &amp; sparklines</li>
+        <li>CLV bet tracker dashboard</li>
+        <li>Sharp/public action splits</li>
+        <li>Up to 50 custom alerts</li>
+      </ul>
+    </div>
+
+    <div class="tier">
+      <div class="tier-name">ELITE</div>
+      <div class="tier-amt"><span data-monthly="29.99" data-yearly="23.99">$29.99</span> <small>/ mo</small></div>
+      <div class="tier-desc">For sharps, syndicates, and quants running real systems.</div>
+      <a href="contact.html" rel="noopener noreferrer" class="btn btn-ghost tier-cta">Talk to sales</a>
+      <ul>
+        <li>Everything in Pro</li>
+        <li>API access &middot; 5,000 requests / day</li>
+        <li>Custom alert webhooks (Discord, Slack)</li>
+        <li>Priority data feed (sub-second)</li>
+        <li>Player prop deep history (90d)</li>
+        <li>Historical CSV export</li>
+        <li>Unlimited alerts</li>
+        <li>Direct Slack channel</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section class="compare">
+  <div class="container">
+    <h2>Compare<br>side-by-side.</h2>
+    <div class="cmp-table">
+      <div class="cmp-row head"><div></div><div style="text-align:center">Free</div><div class="featured-col" style="text-align:center; color:var(--accent)">Pro</div><div style="text-align:center">Elite</div></div>
+
+      <div class="cmp-row cat"><div>DATA</div><div></div><div class="featured-col"></div><div></div></div>
+      <div class="cmp-row"><div class="label">Sports covered</div><div class="v">3</div><div class="v featured-col">10</div><div class="v">10</div></div>
+      <div class="cmp-row"><div class="label">Sportsbooks</div><div class="v">3</div><div class="v featured-col">15+</div><div class="v">15+</div></div>
+      <div class="cmp-row"><div class="label">Refresh rate</div><div class="v">15 min</div><div class="v featured-col">2 sec</div><div class="v">&lt;1 sec</div></div>
+      <div class="cmp-row"><div class="label">Player props</div><div class="dash">&mdash;</div><div class="check featured-col">&#10003;</div><div class="check">&#10003;</div></div>
+
+      <div class="cmp-row cat"><div>ANALYTICS</div><div></div><div class="featured-col"></div><div></div></div>
+      <div class="cmp-row"><div class="label">+EV scoring</div><div class="dash">&mdash;</div><div class="check featured-col">&#10003;</div><div class="check">&#10003;</div></div>
+      <div class="cmp-row"><div class="label">Arbitrage detection</div><div class="dash">&mdash;</div><div class="check featured-col">&#10003;</div><div class="check">&#10003;</div></div>
+      <div class="cmp-row"><div class="label">Line movement charts</div><div class="dash">&mdash;</div><div class="check featured-col">&#10003;</div><div class="check">&#10003;</div></div>
+      <div class="cmp-row"><div class="label">Sharp/public splits</div><div class="dash">&mdash;</div><div class="check featured-col">&#10003;</div><div class="check">&#10003;</div></div>
+      <div class="cmp-row"><div class="label">AI pick reasoning</div><div class="dash">&mdash;</div><div class="check featured-col">&#10003;</div><div class="check">&#10003;</div></div>
+
+      <div class="cmp-row cat"><div>WORKFLOW</div><div></div><div class="featured-col"></div><div></div></div>
+      <div class="cmp-row"><div class="label">CLV bet tracker</div><div class="dash">&mdash;</div><div class="check featured-col">&#10003;</div><div class="check">&#10003;</div></div>
+      <div class="cmp-row"><div class="label">Custom alerts</div><div class="v">3</div><div class="v featured-col">50</div><div class="v">&infin;</div></div>
+      <div class="cmp-row"><div class="label">Webhook delivery</div><div class="dash">&mdash;</div><div class="dash featured-col">&mdash;</div><div class="check">&#10003;</div></div>
+
+      <div class="cmp-row cat"><div>API &middot; DEVELOPER</div><div></div><div class="featured-col"></div><div></div></div>
+      <div class="cmp-row"><div class="label">API access</div><div class="dash">&mdash;</div><div class="dash featured-col">&mdash;</div><div class="check">5k req/day</div></div>
+      <div class="cmp-row"><div class="label">CSV export</div><div class="dash">&mdash;</div><div class="dash featured-col">&mdash;</div><div class="check">&#10003;</div></div>
+      <div class="cmp-row"><div class="label">Historical data</div><div class="dash">&mdash;</div><div class="v featured-col">30d</div><div class="v">90d</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="container faq-grid">
+    <div>
+      <span class="eyebrow">FAQ</span>
+      <h2>Common<br>questions.</h2>
+    </div>
+    <div class="faq-list" data-faq-list>
+      <div class="faq-item">
+        <button type="button" class="faq-q" data-faq-toggle aria-expanded="false">Does Pinnacle accept wagers?</button>
+        <div class="faq-a">No. Pinnacle is an analytics-only platform. We do not take bets, hold funds, or process wagers. We aggregate odds from licensed sportsbooks and surface analytical insights &mdash; what you do with that data is up to you.</div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" data-faq-toggle aria-expanded="false">Can I cancel anytime?</button>
+        <div class="faq-a">Yes. Cancel from your account dashboard at any time. Your subscription remains active through the end of the current billing period.</div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" data-faq-toggle aria-expanded="false">Where does the odds data come from?</button>
+        <div class="faq-a">We integrate with The Odds API and direct partnerships with several sportsbooks. All data is sourced from licensed U.S. operators and refreshed every two seconds on Pro and faster on Elite.</div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" data-faq-toggle aria-expanded="false">Is the API rate-limited?</button>
+        <div class="faq-a">Elite includes 5,000 requests per day with a soft burst limit of 10 req/sec. Higher volumes available on enterprise &mdash; contact sales.</div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" data-faq-toggle aria-expanded="false">Do you offer student or annual discounts?</button>
+        <div class="faq-a">Annual billing knocks 20% off all paid tiers. We don&rsquo;t offer dedicated student pricing today &mdash; but the Free tier is generous enough to learn the workflow at zero cost.</div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" data-faq-toggle aria-expanded="false">What payment methods are accepted?</button>
+        <div class="faq-a">All major credit cards via Stripe. ACH and wire available on annual Elite plans.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:120px 0; text-align:center; background: radial-gradient(700px 400px at 50% 50%, rgba(30,255,110,0.06), transparent 70%);">
+  <div class="container">
+    <h2 class="display" style="font-size:clamp(40px,6vw,72px); margin-bottom: 24px">Start free.<br>Upgrade when ready.</h2>
+    <a href="terminal/index.html" rel="noopener noreferrer" class="btn btn-primary btn-lg">Open Terminal &nbsp;&rarr;</a>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="assets/chrome.js"></script>
+<script src="assets/pricing.js"></script>
+</body>
+</html>

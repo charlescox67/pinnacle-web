@@ -1,0 +1,17 @@
+{
+  "name": "pinnacle-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pinnacle — sports analytics terminal (web).",
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "scripts": {
+    "dev":   "vercel dev",
+    "audit": "npm audit --audit-level=moderate"
+  },
+  "dependencies": {
+    "bcryptjs": "2.4.3"
+  },
+  "comment_security": "Versions pinned (no ^/~). Run npm audit before every deploy. Re-evaluate quarterly. bcryptjs is pure-JS to avoid native build supply-chain risk."
+}

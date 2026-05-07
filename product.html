@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; manifest-src 'self'; upgrade-insecure-requests">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>Product — Pinnacle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="grain"></div>
+<div id="site-nav"></div>
+
+<section class="page-hero container">
+  <span class="eyebrow">PRODUCT</span>
+  <h1>The data layer<br>between you and<br>the <em>market.</em></h1>
+  <p>Pinnacle is built on three engines &mdash; odds aggregation, vig removal, and arbitrage detection &mdash; wrapped in an interface designed to compress hours of cross-book research into seconds.</p>
+</section>
+
+<section class="anatomy">
+  <div class="container anatomy-grid">
+    <div>
+      <span class="eyebrow">ANATOMY</span>
+      <h2>How the<br>terminal works.</h2>
+      <p>Three layers. One screen. Built for traders who treat sports betting as a numbers business.</p>
+      <ul>
+        <li><strong>Ingest</strong><span>15+ sportsbooks polled every 2 seconds. Lines normalized, books reconciled, history stored.</span></li>
+        <li><strong>Compute</strong><span>Vig removal, EV scoring, arb detection, sharp-action signals. Recalculated on every tick.</span></li>
+        <li><strong>Surface</strong><span>Sortable, filterable, drillable. AI reasoning attached to every flagged opportunity.</span></li>
+      </ul>
+    </div>
+
+    <div class="diagram">
+      <span class="diagram-label">SYSTEM DIAGRAM</span>
+      <svg viewBox="0 0 500 460" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#5a655d"/>
+          </marker>
+        </defs>
+        <g font-family="JetBrains Mono" font-size="10" fill="#97a39a">
+          <rect x="20" y="40" width="76" height="46" rx="6" fill="none" stroke="#1c2024"/>
+          <text x="58" y="68" text-anchor="middle">DK</text>
+          <rect x="116" y="40" width="76" height="46" rx="6" fill="none" stroke="#1c2024"/>
+          <text x="154" y="68" text-anchor="middle">FD</text>
+          <rect x="212" y="40" width="76" height="46" rx="6" fill="none" stroke="#1c2024"/>
+          <text x="250" y="68" text-anchor="middle">MGM</text>
+          <rect x="308" y="40" width="76" height="46" rx="6" fill="none" stroke="#1c2024"/>
+          <text x="346" y="68" text-anchor="middle">CAESARS</text>
+          <rect x="404" y="40" width="76" height="46" rx="6" fill="none" stroke="#1c2024"/>
+          <text x="442" y="68" text-anchor="middle">+11</text>
+        </g>
+        <g stroke="#5a655d" stroke-width="1" marker-end="url(#arrow)">
+          <line x1="58"  y1="92" x2="58"  y2="156"/>
+          <line x1="154" y1="92" x2="154" y2="156"/>
+          <line x1="250" y1="92" x2="250" y2="156"/>
+          <line x1="346" y1="92" x2="346" y2="156"/>
+          <line x1="442" y1="92" x2="442" y2="156"/>
+        </g>
+        <rect x="20" y="160" width="460" height="80" rx="8" fill="#0f1110" stroke="#1eff6e" stroke-opacity="0.3"/>
+        <text x="40" y="186" font-family="JetBrains Mono" font-size="10" fill="#5a655d" letter-spacing="2">COMPUTE</text>
+        <text x="40" y="216" font-family="Space Grotesk" font-size="20" fill="#e9efe9" font-weight="500">Vig removal &middot; EV &middot; Arb &middot; Sharp signals</text>
+        <text x="40" y="232" font-family="JetBrains Mono" font-size="10" fill="#97a39a">RECOMPUTED EVERY 2,000ms</text>
+        <g stroke="#5a655d" stroke-width="1" marker-end="url(#arrow)">
+          <line x1="100" y1="240" x2="100" y2="300"/>
+          <line x1="250" y1="240" x2="250" y2="300"/>
+          <line x1="400" y1="240" x2="400" y2="300"/>
+        </g>
+        <g font-family="JetBrains Mono" font-size="10" fill="#97a39a">
+          <rect x="40" y="304" width="120" height="60" rx="6" fill="none" stroke="#1c2024"/>
+          <text x="100" y="330" text-anchor="middle" fill="#e9efe9" font-family="Space Grotesk" font-size="13" font-weight="500">Odds Grid</text>
+          <text x="100" y="348" text-anchor="middle">Side-by-side</text>
+          <rect x="190" y="304" width="120" height="60" rx="6" fill="none" stroke="#1eff6e" stroke-opacity="0.4"/>
+          <text x="250" y="330" text-anchor="middle" fill="#1eff6e" font-family="Space Grotesk" font-size="13" font-weight="500">EV / Arb Feed</text>
+          <text x="250" y="348" text-anchor="middle">Sorted, filtered</text>
+          <rect x="340" y="304" width="120" height="60" rx="6" fill="none" stroke="#1c2024"/>
+          <text x="400" y="330" text-anchor="middle" fill="#e9efe9" font-family="Space Grotesk" font-size="13" font-weight="500">CLV Tracker</text>
+          <text x="400" y="348" text-anchor="middle">Bet history</text>
+        </g>
+        <line x1="250" y1="364" x2="250" y2="404" stroke="#5a655d" marker-end="url(#arrow)"/>
+        <rect x="170" y="408" width="160" height="36" rx="6" fill="#1eff6e"/>
+        <text x="250" y="431" text-anchor="middle" font-family="Space Grotesk" font-weight="600" font-size="14" fill="#001508">YOU</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="feature-row">
+  <div class="container">
+    <div class="feature-text">
+      <span class="eyebrow">FEATURE 01</span>
+      <h2>Line movement,<br>at a glance.</h2>
+      <p>Every market gets a sparkline. Steam moves get a flag. Reverse-line-movement gets called out before it bites you. The line knows things &mdash; Pinnacle helps you read it.</p>
+      <a href="features.html" rel="noopener noreferrer" class="btn btn-ghost">All features &rarr;</a>
+    </div>
+    <div class="feature-vis">
+      <div class="spark-wrap">
+        <div class="spark-head">
+          <div><div style="text-transform:uppercase; letter-spacing:0.1em">BOS &minus;6.5</div><span class="v">+0.5 over 12h</span></div>
+          <div style="text-align:right"><div>OPEN</div><div style="color:var(--fg)">&minus;7.0</div></div>
+        </div>
+        <svg class="spark-svg" viewBox="0 0 500 200" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="sparkGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#1eff6e" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#1eff6e" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M 0 130 L 50 145 L 100 120 L 150 110 L 200 95 L 250 100 L 300 80 L 350 90 L 400 70 L 450 60 L 500 50 L 500 200 L 0 200 Z" fill="url(#sparkGrad)"/>
+          <path d="M 0 130 L 50 145 L 100 120 L 150 110 L 200 95 L 250 100 L 300 80 L 350 90 L 400 70 L 450 60 L 500 50" stroke="#1eff6e" stroke-width="2" fill="none"/>
+          <circle cx="500" cy="50" r="4" fill="#1eff6e"/>
+          <circle cx="500" cy="50" r="8" fill="#1eff6e" opacity="0.3"/>
+          <line x1="0" y1="40" x2="500" y2="40" stroke="#1c2024" stroke-dasharray="3 3"/>
+          <line x1="0" y1="100" x2="500" y2="100" stroke="#1c2024" stroke-dasharray="3 3"/>
+          <line x1="0" y1="160" x2="500" y2="160" stroke="#1c2024" stroke-dasharray="3 3"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="feature-row alt">
+  <div class="container">
+    <div class="feature-vis">
+      <div class="split-bars">
+        <div>
+          <div class="spark-head" style="margin-bottom:8px">
+            <span style="text-transform:uppercase; letter-spacing:0.12em">% Money</span>
+            <span style="color:var(--fg-mute)">vs % Tickets</span>
+          </div>
+          <div class="split-bar-row"><span class="l">Boston</span><div class="split-bar-track"><div class="split-bar-fill" style="width:78%"></div></div><span class="v">78%</span></div>
+          <div class="split-bar-row"><span class="l">Boston</span><div class="split-bar-track"><div class="split-bar-fill amber" style="width:42%"></div></div><span class="v">42%</span></div>
+          <div class="split-bar-row"><span class="l">Miami</span><div class="split-bar-track"><div class="split-bar-fill" style="width:22%"></div></div><span class="v">22%</span></div>
+          <div class="split-bar-row"><span class="l">Miami</span><div class="split-bar-track"><div class="split-bar-fill amber" style="width:58%"></div></div><span class="v">58%</span></div>
+        </div>
+        <div style="display:flex; gap:8px; margin-top:8px">
+          <span class="tag rose">STEAM</span>
+          <span class="tag amber">RLM</span>
+          <span class="tag green">+EV 3.8%</span>
+        </div>
+      </div>
+    </div>
+    <div class="feature-text">
+      <span class="eyebrow">FEATURE 02</span>
+      <h2>Sharp money<br>is loud, if you<br>know how to listen.</h2>
+      <p>When 22% of tickets pull 78% of the money, the line is being moved by professionals. Pinnacle calls it out automatically &mdash; STEAM, RLM, and ticket/money divergence flagged in real time.</p>
+      <a href="features.html" rel="noopener noreferrer" class="btn btn-ghost">All features &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section class="feature-row">
+  <div class="container">
+    <div class="feature-text">
+      <span class="eyebrow">FEATURE 03</span>
+      <h2>One slip.<br>Every book.<br>All your math.</h2>
+      <p>Click any line to slot it into your slip. Pinnacle calculates implied payout, recommended Kelly stake, and CLV anchor on every tap. When you&rsquo;re ready, sync to your CLV dashboard.</p>
+      <a href="terminal/index.html" rel="noopener noreferrer" class="btn btn-primary">Try the terminal</a>
+    </div>
+    <div class="feature-vis">
+      <div class="slip-mock">
+        <div class="spark-head" style="margin-bottom:14px">
+          <span style="text-transform:uppercase; letter-spacing:0.12em">SLIP &middot; 3 LEGS</span>
+          <span class="tag green">ARB +0.62%</span>
+        </div>
+        <div class="slip-row">
+          <div class="top"><span class="name">BOS &minus;6.5</span><span class="odd">&minus;104</span></div>
+          <div class="meta">FANDUEL &middot; NBA</div>
+          <div class="input-row"><input type="text" value="$100" readonly><span class="payout">&rarr; $196.15</span></div>
+        </div>
+        <div class="slip-row">
+          <div class="top"><span class="name">MIA +6.5</span><span class="odd">&minus;105</span></div>
+          <div class="meta">MGM &middot; NBA</div>
+          <div class="input-row"><input type="text" value="$95" readonly><span class="payout">&rarr; $185.48</span></div>
+        </div>
+        <div class="slip-row">
+          <div class="top"><span class="name">UNDER 218.5</span><span class="odd">+102</span></div>
+          <div class="meta">CAESARS &middot; NBA</div>
+          <div class="input-row"><input type="text" value="$50" readonly><span class="payout">&rarr; $101.00</span></div>
+        </div>
+        <div class="slip-foot">
+          <span>TOTAL OUTLAY</span>
+          <span class="v">$245.00 &rarr; $482.63</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:120px 0; text-align:center; background: radial-gradient(700px 400px at 50% 50%, rgba(30,255,110,0.06), transparent 70%);">
+  <div class="container">
+    <h2 class="display" style="font-size:clamp(40px,6vw,72px); margin-bottom: 24px">Ready when you are.</h2>
+    <a href="terminal/index.html" rel="noopener noreferrer" class="btn btn-primary btn-lg">Open Terminal &nbsp;&rarr;</a>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="assets/chrome.js"></script>
+</body>
+</html>

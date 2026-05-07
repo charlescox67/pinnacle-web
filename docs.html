@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; manifest-src 'self'; upgrade-insecure-requests">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>Docs — Pinnacle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+.docs-layout { display: grid; grid-template-columns: 220px 1fr; gap: 64px; align-items: start; }
+@media (max-width: 820px) { .docs-layout { grid-template-columns: 1fr; } }
+.docs-nav { position: sticky; top: 80px; display: flex; flex-direction: column; gap: 2px; }
+@media (max-width: 820px) { .docs-nav { position: static; flex-direction: row; flex-wrap: wrap; gap: 6px; margin-bottom: 24px; } }
+.docs-nav-section { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-mute); padding: 8px 10px 4px; }
+.docs-nav a { font-size: 13px; color: var(--fg-dim); padding: 6px 10px; border-radius: 6px; display: block; transition: all 0.15s; }
+.docs-nav a:hover { color: var(--fg); background: var(--bg-2); }
+.docs-nav a.active { color: var(--accent); background: var(--accent-soft); }
+.docs-section { padding-top: 32px; border-top: 1px solid var(--line); margin-top: 48px; }
+.docs-section:first-child { border-top: 0; margin-top: 0; padding-top: 0; }
+.docs-section h2 { font-family: var(--font-display); font-size: 32px; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 16px; }
+.docs-section h3 { font-family: var(--font-display); font-size: 20px; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 10px; margin-top: 32px; }
+.docs-section p { font-size: 15px; color: var(--fg-dim); line-height: 1.65; margin-bottom: 14px; max-width: 680px; }
+.docs-section ul { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; max-width: 680px; }
+.docs-section ul li { font-size: 14px; color: var(--fg-dim); padding-left: 16px; position: relative; line-height: 1.55; }
+.docs-section ul li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-family: var(--font-mono); }
+.code-block { background: var(--bg-1); border: 1px solid var(--line); border-radius: 8px; padding: 16px 20px; font-family: var(--font-mono); font-size: 13px; color: var(--fg); overflow-x: auto; margin: 16px 0; white-space: pre; line-height: 1.6; }
+.code-block .key { color: var(--accent); }
+.code-block .str { color: #a5d6ff; }
+.code-block .num { color: var(--amber); }
+.code-block .cmt { color: var(--fg-mute); }
+.method-badge { display: inline-flex; align-items: center; padding: 2px 8px; border-radius: 4px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; margin-right: 6px; }
+.method-badge.get  { background: var(--accent-soft);  color: var(--accent); }
+.method-badge.post { background: rgba(245,183,59,0.12); color: var(--amber); }
+.endpoint-card { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; margin-bottom: 16px; background: var(--bg-1); }
+.endpoint-head { padding: 14px 18px; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 10px; background: var(--bg-2); }
+.endpoint-path { font-family: var(--font-mono); font-size: 14px; color: var(--fg); font-weight: 500; }
+.endpoint-desc { padding: 14px 18px; border-bottom: 1px solid var(--line); font-size: 14px; color: var(--fg-dim); }
+.endpoint-params { padding: 14px 18px; }
+.param-row { display: grid; grid-template-columns: 120px 80px 1fr; gap: 12px; font-size: 13px; padding: 6px 0; border-bottom: 1px solid var(--line); }
+.param-row:last-child { border-bottom: 0; }
+.param-name { font-family: var(--font-mono); color: var(--fg); }
+.param-type { font-family: var(--font-mono); font-size: 11px; color: var(--accent); }
+.param-desc { color: var(--fg-dim); }
+.changelog-entry { padding: 24px 0; border-bottom: 1px solid var(--line); }
+.changelog-entry:last-child { border-bottom: 0; }
+.changelog-version { font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 4px; display: flex; align-items: center; gap: 10px; }
+.changelog-date { color: var(--fg-mute); font-weight: 400; }
+.changelog-entry h4 { font-family: var(--font-display); font-size: 18px; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 10px; }
+.changelog-entry ul { margin: 0; }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div id="site-nav"></div>
+
+<section class="page-hero container">
+  <span class="eyebrow">DOCS</span>
+  <h1>Documentation<br>&amp; Changelog.</h1>
+  <p>API reference, integration guide, and release notes for the Pinnacle platform.</p>
+</section>
+
+<section class="section container" style="padding-top:48px">
+  <div class="docs-layout">
+
+    <nav class="docs-nav" aria-label="Documentation sections">
+      <span class="docs-nav-section">Guide</span>
+      <a href="#overview">Overview</a>
+      <a href="#auth-guide">Authentication</a>
+      <span class="docs-nav-section">Reference</span>
+      <a href="#endpoints">Endpoints</a>
+      <span class="docs-nav-section">Releases</span>
+      <a href="#changelog">Changelog</a>
+    </nav>
+
+    <div>
+      <!-- OVERVIEW -->
+      <div class="docs-section" id="overview">
+        <h2>Overview</h2>
+        <p>The Pinnacle API is a server-side proxy that aggregates odds from The Odds API and surfaces them in a normalized, sanitized format. It runs as Vercel serverless functions at <code style="font-family:var(--font-mono);font-size:13px;background:var(--bg-1);padding:2px 6px;border-radius:4px;border:1px solid var(--line)">your-domain.vercel.app/api</code>.</p>
+
+        <p>All endpoints enforce:</p>
+        <ul>
+          <li>Rate limiting — 60 req/min per IP on the odds endpoint; stricter limits on auth endpoints.</li>
+          <li>Strict input validation — every parameter is allowlisted or regex-validated before use.</li>
+          <li>Generic errors — stack traces and upstream URLs are never exposed to clients.</li>
+          <li><code style="font-family:var(--font-mono);font-size:13px">Cache-Control: no-store</code> on all API responses.</li>
+        </ul>
+
+        <h3>Base URL</h3>
+        <div class="code-block">https://your-domain.vercel.app</div>
+
+        <h3>Response format</h3>
+        <p>All responses are JSON. Errors follow this shape:</p>
+        <div class="code-block">{
+  <span class="key">"error"</span>: <span class="str">"invalid_sport"</span>  <span class="cmt">// machine-readable error code</span>
+}</div>
+
+        <h3>Self-hosting / local dev</h3>
+        <p>Clone the repo and run <code style="font-family:var(--font-mono);font-size:13px;background:var(--bg-1);padding:2px 6px;border-radius:4px;border:1px solid var(--line)">vercel dev</code>. Set <code style="font-family:var(--font-mono);font-size:13px">ODDS_API_KEY</code> in <code style="font-family:var(--font-mono);font-size:13px">.env.local</code>. The terminal will automatically call <code style="font-family:var(--font-mono);font-size:13px">/api/odds</code> and display live lines.</p>
+      </div>
+
+      <!-- AUTH GUIDE -->
+      <div class="docs-section" id="auth-guide">
+        <h2>Authentication</h2>
+        <p>Pinnacle uses HMAC-SHA256 signed session tokens stored in an <code style="font-family:var(--font-mono);font-size:13px">__Host-sid</code> HttpOnly cookie. No tokens are ever stored in localStorage or JavaScript-accessible memory.</p>
+
+        <h3>Sign up flow</h3>
+        <div class="code-block"><span class="cmt"># 1. POST credentials</span>
+curl -X POST https://your-domain/api/auth/signup \
+  -H "Content-Type: application/json" \
+  -d '{"email":"you@example.com","password":"your12charpass1"}'
+
+<span class="cmt"># 2. On success: 201 + Set-Cookie: __Host-sid=...</span>
+{ <span class="key">"ok"</span>: <span class="num">true</span> }</div>
+
+        <h3>Cookie attributes</h3>
+        <ul>
+          <li><code style="font-family:var(--font-mono);font-size:13px">HttpOnly</code> — not accessible to JavaScript; prevents XSS token theft.</li>
+          <li><code style="font-family:var(--font-mono);font-size:13px">Secure</code> — only sent over HTTPS.</li>
+          <li><code style="font-family:var(--font-mono);font-size:13px">SameSite=Strict</code> — prevents CSRF; cookie not sent on cross-site requests.</li>
+          <li><code style="font-family:var(--font-mono);font-size:13px">__Host-</code> prefix — requires Secure + no Domain attribute + Path=/.</li>
+          <li><code style="font-family:var(--font-mono);font-size:13px">Max-Age=604800</code> — 7-day expiry.</li>
+        </ul>
+
+        <h3>Password requirements</h3>
+        <ul>
+          <li>Minimum 12 characters.</li>
+          <li>Must contain at least one letter and one number.</li>
+          <li>Maximum 256 characters.</li>
+          <li>Stored as bcrypt hash with cost factor 12 (~250ms per hash).</li>
+        </ul>
+      </div>
+
+      <!-- ENDPOINTS -->
+      <div class="docs-section" id="endpoints">
+        <h2>API Endpoints</h2>
+
+        <div class="endpoint-card">
+          <div class="endpoint-head">
+            <span class="method-badge get">GET</span>
+            <span class="endpoint-path">/api/odds</span>
+          </div>
+          <div class="endpoint-desc">Returns sanitized odds for all games in a sport, across all tracked sportsbooks. No auth required.</div>
+          <div class="endpoint-params">
+            <div class="param-row" style="font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--fg-mute);padding-bottom:8px">
+              <div>Parameter</div><div>Type</div><div>Description</div>
+            </div>
+            <div class="param-row">
+              <div class="param-name">sport</div>
+              <div class="param-type">string</div>
+              <div class="param-desc">Required. One of: <code style="font-family:var(--font-mono);font-size:12px">basketball_nba</code>, <code style="font-family:var(--font-mono);font-size:12px">americanfootball_nfl</code>, <code style="font-family:var(--font-mono);font-size:12px">baseball_mlb</code>, <code style="font-family:var(--font-mono);font-size:12px">icehockey_nhl</code>, <code style="font-family:var(--font-mono);font-size:12px">mma_mixed_martial_arts</code>.</div>
+            </div>
+            <div class="param-row">
+              <div class="param-name">region</div>
+              <div class="param-type">string</div>
+              <div class="param-desc">Optional. <code style="font-family:var(--font-mono);font-size:12px">us</code> (default) or <code style="font-family:var(--font-mono);font-size:12px">us2</code>.</div>
+            </div>
+            <div class="param-row">
+              <div class="param-name">market</div>
+              <div class="param-type">string</div>
+              <div class="param-desc">Optional. Comma-separated list: <code style="font-family:var(--font-mono);font-size:12px">h2h</code>, <code style="font-family:var(--font-mono);font-size:12px">spreads</code>, <code style="font-family:var(--font-mono);font-size:12px">totals</code>. Default: all three.</div>
+            </div>
+          </div>
+          <div style="padding:0 18px 14px">
+            <div style="font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--fg-mute);margin-bottom:8px">Example response</div>
+            <div class="code-block" style="margin:0">{
+  <span class="key">"sport"</span>: <span class="str">"basketball_nba"</span>,
+  <span class="key">"count"</span>: <span class="num">4</span>,
+  <span class="key">"games"</span>: [{
+    <span class="key">"id"</span>: <span class="str">"abc123"</span>,
+    <span class="key">"home_team"</span>: <span class="str">"Boston Celtics"</span>,
+    <span class="key">"away_team"</span>: <span class="str">"LA Lakers"</span>,
+    <span class="key">"commence_time"</span>: <span class="str">"2026-05-06T23:30:00Z"</span>,
+    <span class="key">"bookmakers"</span>: [...]
+  }]
+}</div>
+          </div>
+        </div>
+
+        <div class="endpoint-card">
+          <div class="endpoint-head">
+            <span class="method-badge post">POST</span>
+            <span class="endpoint-path">/api/auth/signup</span>
+          </div>
+          <div class="endpoint-desc">Create a new account. Rate limited to 3 attempts per IP per 10 minutes. Returns a session cookie on success.</div>
+          <div style="padding:0 18px 14px">
+            <div class="code-block" style="margin:0">Body: { <span class="key">"email"</span>: <span class="str">"string"</span>, <span class="key">"password"</span>: <span class="str">"string"</span> }
+Success: <span class="num">201</span> { <span class="key">"ok"</span>: <span class="num">true</span> } + Set-Cookie
+Error:   <span class="num">400</span> { <span class="key">"error"</span>: <span class="str">"weak_password"</span> }
+         <span class="num">409</span> { <span class="key">"error"</span>: <span class="str">"email_taken"</span> }
+         <span class="num">429</span> { <span class="key">"error"</span>: <span class="str">"too_many_attempts"</span> }</div>
+          </div>
+        </div>
+
+        <div class="endpoint-card">
+          <div class="endpoint-head">
+            <span class="method-badge post">POST</span>
+            <span class="endpoint-path">/api/auth/login</span>
+          </div>
+          <div class="endpoint-desc">Authenticate an existing account. Rate limited to 5 attempts per IP per 5 minutes. Returns a session cookie on success.</div>
+          <div style="padding:0 18px 14px">
+            <div class="code-block" style="margin:0">Body: { <span class="key">"email"</span>: <span class="str">"string"</span>, <span class="key">"password"</span>: <span class="str">"string"</span> }
+Success: <span class="num">200</span> { <span class="key">"ok"</span>: <span class="num">true</span> } + Set-Cookie
+Error:   <span class="num">401</span> { <span class="key">"error"</span>: <span class="str">"invalid_credentials"</span> }</div>
+          </div>
+        </div>
+
+        <div class="endpoint-card">
+          <div class="endpoint-head">
+            <span class="method-badge post">POST</span>
+            <span class="endpoint-path">/api/auth/logout</span>
+          </div>
+          <div class="endpoint-desc">Invalidates the current session by clearing the session cookie. Always returns 200 regardless of whether the user was logged in.</div>
+        </div>
+
+        <div class="endpoint-card">
+          <div class="endpoint-head">
+            <span class="method-badge get">GET</span>
+            <span class="endpoint-path">/api/me</span>
+          </div>
+          <div class="endpoint-desc">Returns the current user&rsquo;s profile. Requires a valid session cookie. Returns 401 if unauthenticated.</div>
+          <div style="padding:0 18px 14px">
+            <div class="code-block" style="margin:0">Success: <span class="num">200</span> {
+  <span class="key">"id"</span>: <span class="str">"uuid"</span>, <span class="key">"email"</span>: <span class="str">"string"</span>,
+  <span class="key">"role"</span>: <span class="str">"user"</span>, <span class="key">"tier"</span>: <span class="str">"pro"</span>
+}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHANGELOG -->
+      <div class="docs-section" id="changelog">
+        <h2>Changelog</h2>
+
+        <div class="changelog-entry">
+          <div class="changelog-version">
+            v2.4 <span class="tag green" style="font-size:9px;padding:2px 6px">CURRENT</span>
+            <span class="changelog-date">May 2026</span>
+          </div>
+          <h4>Terminal relaunch — full analytics platform</h4>
+          <ul>
+            <li>Complete UI rebuild: Space Grotesk design system, neon green theme, no Tailwind CDN dependency.</li>
+            <li>EV calculator on every odds button — no-vig model, edge%, fair price.</li>
+            <li>Arbitrage detection engine — guaranteed profit %, stake split calculator.</li>
+            <li>CLV bet tracker — log bets, track closing line value, P&amp;L dashboard.</li>
+            <li>Bet slip panel — click any odds button to add; payout auto-calculated.</li>
+            <li>Alert system — configure +EV threshold and arb alerts per game; bell badge count.</li>
+            <li>Sharp/public action module — % bets, % money, STEAM and RLM badges.</li>
+            <li>Multi-axis sort — Top EV, Arb, AI Confidence, Default.</li>
+            <li>Multi-axis filter — +EV, Arb Only, Sharp Steam chips.</li>
+            <li>Bet slip and alerts persist across page refreshes via localStorage.</li>
+          </ul>
+        </div>
+
+        <div class="changelog-entry">
+          <div class="changelog-version">v2.0 <span class="changelog-date">March 2026</span></div>
+          <h4>Multi-page site + auth system</h4>
+          <ul>
+            <li>Replaced single-file app with proper multi-page site architecture.</li>
+            <li>New pages: landing, product, features, pricing, login, signup, about, docs, legal.</li>
+            <li>HMAC-SHA256 session auth with __Host- prefixed HttpOnly cookies.</li>
+            <li>bcrypt password hashing (cost 12), timing-safe comparison.</li>
+            <li>Upgraded CSP: dropped unsafe-eval, removed Tailwind CDN.</li>
+            <li>HSTS preload, COOP, COEP, CORP headers via vercel.json.</li>
+            <li>Modular backend: api/_lib/auth.js shared across all auth endpoints.</li>
+          </ul>
+        </div>
+
+        <div class="changelog-entry">
+          <div class="changelog-version">v1.2 <span class="changelog-date">January 2026</span></div>
+          <h4>Line movement + AI reasoning</h4>
+          <ul>
+            <li>Sparkline history per outcome (localStorage snapshots).</li>
+            <li>AI pick reasoning panel with H2H, ATS trends, injury impact.</li>
+            <li>Confidence bar per game.</li>
+            <li>Player props tab on all NBA and NFL games.</li>
+          </ul>
+        </div>
+
+        <div class="changelog-entry">
+          <div class="changelog-version">v1.0 <span class="changelog-date">November 2025</span></div>
+          <h4>MVP launch</h4>
+          <ul>
+            <li>Real-time odds comparison across 5 sportsbooks.</li>
+            <li>Spread, moneyline, and totals markets for NBA, NFL, MLB.</li>
+            <li>The Odds API integration via serverless proxy.</li>
+            <li>Basic no-vig EV indicator.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="assets/chrome.js"></script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; manifest-src 'self'; upgrade-insecure-requests">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>Pinnacle — Sports Analytics Terminal</title>
+<meta name="description" content="Aggregate odds across 15+ sportsbooks. Detect arbitrage. Surface +EV. Pinnacle is the analytics terminal for serious sports bettors.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="grain"></div>
+<div id="site-nav"></div>
+
+<section class="hero container">
+  <div class="hero-grid">
+    <div class="fade-in">
+      <span class="tag green" style="margin-bottom:28px"><span class="pulse-dot"></span> LIVE · v2.4 NOW SHIPPING</span>
+      <h1>The terminal<br>for sports<br><em>edge.</em></h1>
+      <p class="lede">Pinnacle aggregates real-time odds across 15+ sportsbooks, removes the vig, surfaces every +EV opportunity, and explains every pick. Built for analysts. Built to find what the market missed.</p>
+      <div class="hero-cta">
+        <a href="terminal/index.html" rel="noopener noreferrer" class="btn btn-primary btn-lg">Open the Terminal &nbsp;&rarr;</a>
+        <a href="product.html" rel="noopener noreferrer" class="btn btn-ghost btn-lg">See how it works</a>
+      </div>
+      <div class="hero-meta">
+        <div class="hero-meta-item"><div class="v mono">15+</div><div class="l">Books tracked</div></div>
+        <div class="hero-meta-item"><div class="v mono">142<span style="font-size:14px;color:var(--fg-mute)">ms</span></div><div class="l">Median latency</div></div>
+        <div class="hero-meta-item"><div class="v mono">50M+</div><div class="l">Daily comparisons</div></div>
+        <div class="hero-meta-item"><div class="v mono">98<span style="font-size:14px;color:var(--fg-mute)">%</span></div><div class="l">Line accuracy</div></div>
+      </div>
+    </div>
+
+    <div class="preview fade-in delay-2">
+      <div class="preview-bar">
+        <div class="left"><span class="pulse-dot"></span><span>NBA &middot; BOS @ MIA &middot; 10:30 ET</span></div>
+        <div class="right"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div>
+      </div>
+      <div class="preview-game">
+        <div class="team"><div class="matchup">Boston Celtics</div><div class="meta">SPREAD &middot; -6.5</div></div>
+        <div class="preview-cell"><span class="book">DraftKings</span><span class="odds">-110</span></div>
+        <div class="preview-cell best"><span class="book">FanDuel</span><span class="odds">-104</span></div>
+        <div class="preview-cell"><span class="book">MGM</span><span class="odds">-112</span></div>
+      </div>
+      <div class="preview-game">
+        <div class="team"><div class="matchup">Miami Heat</div><div class="meta">SPREAD &middot; +6.5</div></div>
+        <div class="preview-cell"><span class="book">DraftKings</span><span class="odds">-110</span></div>
+        <div class="preview-cell"><span class="book">FanDuel</span><span class="odds">-114</span></div>
+        <div class="preview-cell best"><span class="book">MGM</span><span class="odds">-105</span></div>
+      </div>
+      <div class="preview-foot">
+        <span>EV +3.8% &middot; ARB DETECTED</span>
+        <span class="arb-badge">+0.62%</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="container">
+    <div class="trust-label">Aggregating odds from</div>
+    <div class="trust-row">
+      <span class="logo">DraftKings</span>
+      <span class="logo">FanDuel</span>
+      <span class="logo">BetMGM</span>
+      <span class="logo">Caesars</span>
+      <span class="logo">BetRivers</span>
+      <span class="logo">PointsBet</span>
+      <span class="logo">Hard&nbsp;Rock</span>
+      <span class="logo">Fanatics</span>
+    </div>
+  </div>
+</section>
+
+<section class="section container">
+  <div class="section-head">
+    <div><span class="eyebrow">01 &middot; CAPABILITIES</span></div>
+    <div>
+      <h2>Every market.<br>Every book.<br>Every edge.</h2>
+      <p style="margin-top:24px">A complete intelligence layer over the public sportsbook market. Data refreshed every two seconds; analysis recomputed on every tick.</p>
+    </div>
+  </div>
+
+  <div class="cap-grid">
+    <div class="cap fade-in">
+      <span class="cap-num">01</span>
+      <div class="cap-icon"><svg class="icn" viewBox="0 0 24 24"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg></div>
+      <h3>Real-time odds</h3>
+      <p>Compare spread, moneyline, totals, and player props across every major book in a single view.</p>
+    </div>
+    <div class="cap fade-in delay-1">
+      <span class="cap-num">02</span>
+      <div class="cap-icon"><svg class="icn" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+      <h3>No-vig EV calculator</h3>
+      <p>Strip the juice from any two-sided market. EV scoring on every line, recalculated on every refresh.</p>
+    </div>
+    <div class="cap fade-in delay-2">
+      <span class="cap-num">03</span>
+      <div class="cap-icon"><svg class="icn" viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg></div>
+      <h3>Arbitrage engine</h3>
+      <p>Detects when combined implied probability across opposing outcomes drops below 100%. Stake-split included.</p>
+    </div>
+    <div class="cap fade-in delay-3">
+      <span class="cap-num">04</span>
+      <div class="cap-icon"><svg class="icn" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h6v6"/></svg></div>
+      <h3>Line-movement tracking</h3>
+      <p>Sparkline price history per outcome. Steam moves and reverse-line-movement detected automatically.</p>
+    </div>
+    <div class="cap fade-in delay-4">
+      <span class="cap-num">05</span>
+      <div class="cap-icon"><svg class="icn" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="9"/></svg></div>
+      <h3>AI-explained picks</h3>
+      <p>Recommendations backed by H2H, ATS trends, injury impact, and sharp action. Confidence scored.</p>
+    </div>
+    <div class="cap fade-in delay-5">
+      <span class="cap-num">06</span>
+      <div class="cap-icon"><svg class="icn" viewBox="0 0 24 24"><path d="M12 2v6M12 22v-6M2 12h6M22 12h-6"/></svg></div>
+      <h3>CLV bet tracker</h3>
+      <p>Every wager tagged with closing-line value. Track win rate, ROI, and edge realized over time.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section container" style="padding-top:0">
+  <div class="section-head">
+    <div><span class="eyebrow">02 &middot; THE EDGE</span></div>
+    <div>
+      <h2>Math first.<br>Vibes never.</h2>
+      <p style="margin-top:24px">Every number on Pinnacle is auditable. Two engines run on every market — vig removal and arbitrage detection.</p>
+    </div>
+  </div>
+
+  <div class="split">
+    <div class="split-side">
+      <span class="eyebrow">+EV ENGINE</span>
+      <h3>Your model<br>vs the market.</h3>
+      <p>We reverse-engineer the no-vig probability of every market and benchmark each book's price against the consensus.</p>
+      <div class="ev-bar">
+        <div class="ev-seg neg" style="flex:1.3"><span class="v mono">-2.4%</span><span class="l">DK</span></div>
+        <div class="ev-seg flat" style="flex:1"><span class="v mono">-0.8%</span><span class="l">CAESARS</span></div>
+        <div class="ev-seg flat" style="flex:1"><span class="v mono">+0.2%</span><span class="l">MGM</span></div>
+        <div class="ev-seg pos" style="flex:1.6"><span class="v mono">+3.8%</span><span class="l">FANDUEL</span></div>
+      </div>
+    </div>
+    <div class="split-side">
+      <span class="eyebrow">ARB DETECTION</span>
+      <h3>Risk-free,<br>by definition.</h3>
+      <p>When best opposing prices imply combined probability below 100%, the arb is locked. We compute the precise stake split.</p>
+      <div class="mini-mkt">
+        <div class="mini-mkt-row win"><span class="name">BOS Spread &minus;6.5</span><span class="book">FanDuel</span><span class="odd">&minus;104</span></div>
+        <div class="mini-mkt-row win"><span class="name">MIA Spread +6.5</span><span class="book">MGM</span><span class="odd">&minus;105</span></div>
+        <div class="mini-mkt-row" style="background:var(--bg-2)"><span class="name" style="color:var(--accent)">Locked profit</span><span class="book"></span><span class="odd" style="color:var(--accent)">+0.62%</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section container" style="padding-top:0">
+  <div class="section-head">
+    <div><span class="eyebrow">03 &middot; WORKFLOW</span></div>
+    <div><h2>From scan<br>to staked<br>in 60 seconds.</h2></div>
+  </div>
+  <div class="steps">
+    <div class="step"><span class="step-no">STEP 01</span><h4>Scan</h4><p>Filter every market by EV threshold, arb status, sport, or sharp action. Sort by edge magnitude.</p></div>
+    <div class="step"><span class="step-no">STEP 02</span><h4>Verify</h4><p>Drill into any market for line history, sharp/public splits, injury context, and AI reasoning.</p></div>
+    <div class="step"><span class="step-no">STEP 03</span><h4>Stake</h4><p>Add to slip with one tap. Pinnacle calculates payout, Kelly fraction, and CLV anchor automatically.</p></div>
+    <div class="step"><span class="step-no">STEP 04</span><h4>Track</h4><p>Bets sync to your CLV dashboard. Win rate, ROI, and captured edge visualized.</p></div>
+  </div>
+</section>
+
+<section class="quote">
+  <div class="container">
+    <blockquote>Pinnacle is what happens when a Bloomberg Terminal,<br>a Kelly calculator, and a sharp&rsquo;s notebook<br>collide in a single browser tab.</blockquote>
+    <div class="quote-meta">&mdash; DEAL FLOW DIGEST &middot; ISSUE 0094</div>
+  </div>
+</section>
+
+<section class="section container">
+  <div class="section-head">
+    <div><span class="eyebrow">04 &middot; PRICING</span></div>
+    <div>
+      <h2>Three tiers.<br>One terminal.</h2>
+      <p style="margin-top:24px">Start free, upgrade when the edge starts paying for itself.</p>
+    </div>
+  </div>
+  <div class="price-strip">
+    <div class="price-cell">
+      <div class="tier">FREE</div>
+      <div class="amt">$0</div>
+      <div class="desc">For curious bettors getting started.</div>
+      <ul><li>3 sports, 3 books</li><li>Basic odds comparison</li><li>Delayed line history</li></ul>
+      <a href="pricing.html" rel="noopener noreferrer" class="btn btn-ghost">Get started</a>
+    </div>
+    <div class="price-cell featured">
+      <div class="tier" style="color:var(--accent)">PRO &middot; MOST POPULAR</div>
+      <div class="amt">$9.99 <small>/ mo</small></div>
+      <div class="desc">For serious recreational players.</div>
+      <ul><li>All sports, all 15+ books</li><li>+EV scoring on every market</li><li>Arb detection &amp; alerts</li><li>CLV tracker</li></ul>
+      <a href="pricing.html" rel="noopener noreferrer" class="btn btn-primary">Start 14-day trial</a>
+    </div>
+    <div class="price-cell">
+      <div class="tier">ELITE</div>
+      <div class="amt">$29.99 <small>/ mo</small></div>
+      <div class="desc">For sharps and syndicates.</div>
+      <ul><li>Everything in Pro</li><li>API access &middot; 5k req/day</li><li>Custom alert webhooks</li><li>Priority data feed</li></ul>
+      <a href="pricing.html" rel="noopener noreferrer" class="btn btn-ghost">Talk to sales</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="container">
+    <h2>Find the <em>edge.</em></h2>
+    <p>Pinnacle is in open access. Open the terminal, no card required.</p>
+    <a href="terminal/index.html" rel="noopener noreferrer" class="btn btn-primary btn-lg">Open Terminal &nbsp;&rarr;</a>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="assets/chrome.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; manifest-src 'self'; upgrade-insecure-requests">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>Features — Pinnacle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="grain"></div>
+<div id="site-nav"></div>
+
+<section class="page-hero container">
+  <span class="eyebrow">FEATURES</span>
+  <h1>Everything<br>under one roof.</h1>
+  <p>Eighteen capabilities, four categories, one terminal. Here&rsquo;s what Pinnacle does &mdash; in detail.</p>
+</section>
+
+<div class="cat-nav">
+  <div class="container cat-nav-inner">
+    <a href="#data" class="active">01 &middot; Data</a>
+    <a href="#analytics">02 &middot; Analytics</a>
+    <a href="#workflow">03 &middot; Workflow</a>
+    <a href="#security">04 &middot; Security</a>
+    <a href="#sports">05 &middot; Coverage</a>
+  </div>
+</div>
+
+<section class="cat" id="data">
+  <div class="container">
+    <div class="cat-head">
+      <div class="num">01</div>
+      <div>
+        <span class="eyebrow">DATA INFRASTRUCTURE</span>
+        <h2>Where the<br>numbers come from.</h2>
+        <p>Every line on Pinnacle is sourced live, normalized, and snapshotted. No stale prices. No mystery feeds.</p>
+      </div>
+    </div>
+    <div class="feat-grid">
+      <div class="feat"><div class="key">DATA &middot; 01</div><h3>Live odds aggregation</h3><p>15+ U.S. sportsbooks polled every two seconds. Side-by-side comparison across spread, moneyline, totals, props, and method markets.</p><div class="feat-tags"><span class="tag green">REAL-TIME</span><span class="tag">15 BOOKS</span></div></div>
+      <div class="feat"><div class="key">DATA &middot; 02</div><h3>Historical line snapshots</h3><p>Every market/outcome/book combination captured into a rolling line history with up to 20 snapshots per outcome.</p><div class="feat-tags"><span class="tag">PERSISTED</span></div></div>
+      <div class="feat"><div class="key">DATA &middot; 03</div><h3>Opening line anchor</h3><p>We capture opening lines and hold them as the directional anchor for every market. Movement arrows update as prices drift.</p><div class="feat-tags"><span class="tag green">STEAM DETECTION</span></div></div>
+      <div class="feat"><div class="key">DATA &middot; 04</div><h3>Player props feed</h3><p>Points, rebounds, assists, passing yards, strikeouts, KOs by round &mdash; props normalized across books.</p><div class="feat-tags"><span class="tag">ALL SPORTS</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cat" id="analytics">
+  <div class="container">
+    <div class="cat-head">
+      <div class="num">02</div>
+      <div>
+        <span class="eyebrow">ANALYTICS ENGINES</span>
+        <h2>The math<br>that finds edge.</h2>
+        <p>Three engines run on every market: vig removal, EV scoring, and arbitrage detection. Recomputed on every tick.</p>
+      </div>
+    </div>
+    <div class="feat-grid">
+      <div class="feat"><div class="key">ENGINE &middot; 01</div><h3>No-vig EV calculator</h3><p>American odds &rarr; implied probability &rarr; fair (no-vig) probability via two-sided market normalization. EV%, edge%, fair price for every line.</p><div class="feat-tags"><span class="tag green">+EV SCORING</span></div></div>
+      <div class="feat"><div class="key">ENGINE &middot; 02</div><h3>Arbitrage detection</h3><p>Continuously scans every market for combined implied probability under 100%. Surfaces guaranteed-profit opportunities.</p><div class="feat-tags"><span class="tag green">RISK-FREE</span></div></div>
+      <div class="feat"><div class="key">ENGINE &middot; 03</div><h3>Sharp/public divergence</h3><p>When % money outpaces % tickets, professionals are loading. Pinnacle flags steam moves and reverse-line-movement.</p><div class="feat-tags"><span class="tag rose">STEAM</span><span class="tag amber">RLM</span></div></div>
+      <div class="feat"><div class="key">ENGINE &middot; 04</div><h3>AI pick reasoning</h3><p>Every recommendation backed by H2H records, ATS trends, injury impact, and sharp action. Confidence scored. Reasoning visible.</p><div class="feat-tags"><span class="tag">CLAUDE</span></div></div>
+      <div class="feat"><div class="key">ENGINE &middot; 05</div><h3>Hit-rate scoring</h3><p>Historical performance per outcome shown as last-N hit rate with sparkbar visualization. Color-coded by tier.</p><div class="feat-tags"><span class="tag">L20 BACKTEST</span></div></div>
+      <div class="feat"><div class="key">ENGINE &middot; 06</div><h3>Consensus / fair line</h3><p>Calculates the cross-book consensus per outcome and flags outlier pricing. Spot which book is offering you the soft side.</p><div class="feat-tags"><span class="tag green">OUTLIER FLAG</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cat" id="workflow">
+  <div class="container">
+    <div class="cat-head">
+      <div class="num">03</div>
+      <div>
+        <span class="eyebrow">YOUR WORKFLOW</span>
+        <h2>Built to<br>get out of the way.</h2>
+        <p>The interface compresses your scan-to-stake loop. Filter, sort, drill, and slip &mdash; without leaving the terminal.</p>
+      </div>
+    </div>
+    <div class="feat-grid">
+      <div class="feat"><div class="key">FLOW &middot; 01</div><h3>Multi-axis filtering</h3><p>Stack market type, value flag (+EV / Arb / Sharp Steam), time window, and team search. Filters compose.</p></div>
+      <div class="feat"><div class="key">FLOW &middot; 02</div><h3>Single-click sorting</h3><p>Top EV, arbitrage, AI confidence, or default chronological. Reorder the entire game list in one click.</p></div>
+      <div class="feat"><div class="key">FLOW &middot; 03</div><h3>Bet slip + portfolio</h3><p>Slide-in panel. Add any line with one tap. Real-time payout calculation per leg.</p></div>
+      <div class="feat"><div class="key">FLOW &middot; 04</div><h3>CLV bet tracker</h3><p>Tagged bets sync to dashboard. Win rate, W/L/Push, ROI, dollar P&amp;L, full bet history table.</p></div>
+      <div class="feat"><div class="key">FLOW &middot; 05</div><h3>Custom alerts</h3><p>Configure +EV thresholds and arb alerts per game. Topbar bell pulses when alerts fire.</p></div>
+      <div class="feat"><div class="key">FLOW &middot; 06</div><h3>Sport navigation</h3><p>10 sports indexed: NBA, NFL, MLB, NHL, UFC, PGA, F1, KFT, Boxing, Lacrosse.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cat" id="security">
+  <div class="container">
+    <div class="cat-head">
+      <div class="num">04</div>
+      <div>
+        <span class="eyebrow">SECURITY POSTURE</span>
+        <h2>Production-grade,<br>by default.</h2>
+        <p>Pinnacle is built like a fintech app. Strict CSP, defense-in-depth XSS handling, server-side validation on every request.</p>
+      </div>
+    </div>
+    <div class="spec-table">
+      <div class="spec-row head"><div>Layer</div><div>Control</div><div>Implementation</div><div>Status</div></div>
+      <div class="spec-row"><div class="label">Frontend</div><div class="val">Content Security Policy</div><div class="val">default-src &lsquo;none&rsquo;, no inline eval</div><div class="check">&#10003; ENFORCED</div></div>
+      <div class="spec-row"><div class="label">Frontend</div><div class="val">DOM safety</div><div class="val">createElement + textContent only; no innerHTML</div><div class="check">&#10003; ENFORCED</div></div>
+      <div class="spec-row"><div class="label">Backend</div><div class="val">API key isolation</div><div class="val">Vercel encrypted env, never client-side</div><div class="check">&#10003; ENFORCED</div></div>
+      <div class="spec-row"><div class="label">Backend</div><div class="val">Boundary sanitization</div><div class="val">Strict regex + length cap on every field</div><div class="check">&#10003; ENFORCED</div></div>
+      <div class="spec-row"><div class="label">Network</div><div class="val">CORS lockdown</div><div class="val">Origin allowlist, GET-only on data routes</div><div class="check">&#10003; ENFORCED</div></div>
+      <div class="spec-row"><div class="label">Network</div><div class="val">Rate limit + payload guard</div><div class="val">Token bucket per IP, 10s timeout, 5MB cap</div><div class="check">&#10003; ENFORCED</div></div>
+      <div class="spec-row"><div class="label">Auth</div><div class="val">Sessions</div><div class="val">HMAC-SHA256, __Host- cookie, HttpOnly+Secure+SameSite=Strict</div><div class="check">&#10003; ENFORCED</div></div>
+      <div class="spec-row"><div class="label">Auth</div><div class="val">Passwords</div><div class="val">bcrypt cost 12, constant-time compare</div><div class="check">&#10003; ENFORCED</div></div>
+      <div class="spec-row"><div class="label">Headers</div><div class="val">HSTS &middot; X-Frame &middot; COOP &middot; COEP</div><div class="val">Vercel response headers</div><div class="check">&#10003; ENFORCED</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cat" id="sports">
+  <div class="container">
+    <div class="cat-head">
+      <div class="num">05</div>
+      <div>
+        <span class="eyebrow">SPORTS COVERAGE</span>
+        <h2>Ten sports.<br>Every market.</h2>
+        <p>Major U.S. sports plus combat sports, motorsport, and lacrosse. Player props where applicable.</p>
+      </div>
+    </div>
+    <div class="feat-grid">
+      <div class="feat"><div class="key">SPORT &middot; 01</div><h3>NBA &middot; WNBA &middot; NCAA</h3><p>Spread, ML, totals, player props (PTS, REB, AST, 3PM), live in-play.</p></div>
+      <div class="feat"><div class="key">SPORT &middot; 02</div><h3>NFL &middot; NCAA</h3><p>Spread, ML, totals, player props (PASS YDS, REC, RUSH ATT, ANYTIME TD).</p></div>
+      <div class="feat"><div class="key">SPORT &middot; 03</div><h3>MLB</h3><p>Run line, ML, totals, F5, player props (HR, K, RBI, hits).</p></div>
+      <div class="feat"><div class="key">SPORT &middot; 04</div><h3>NHL</h3><p>Puck line, ML, totals, player props (SOG, points, goals).</p></div>
+      <div class="feat"><div class="key">SPORT &middot; 05</div><h3>UFC &middot; Boxing</h3><p>ML, method of victory, total rounds, round groups, fight props.</p></div>
+      <div class="feat"><div class="key">SPORT &middot; 06</div><h3>PGA &middot; F1 &middot; Lacrosse</h3><p>Outright winners, top finishes, head-to-head matchups, prop markets.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:120px 0; text-align:center; background: radial-gradient(700px 400px at 50% 50%, rgba(30,255,110,0.06), transparent 70%);">
+  <div class="container">
+    <h2 class="display" style="font-size:clamp(40px,6vw,72px); margin-bottom: 24px">Open the terminal.</h2>
+    <p style="color:var(--fg-dim); margin-bottom:32px">Free tier. No card. Two clicks.</p>
+    <a href="terminal/index.html" rel="noopener noreferrer" class="btn btn-primary btn-lg">Launch Terminal &nbsp;&rarr;</a>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="assets/chrome.js"></script>
+<script src="assets/features.js"></script>
+</body>
+</html>

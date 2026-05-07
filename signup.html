@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; manifest-src 'self'; upgrade-insecure-requests">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Create account — Pinnacle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="grain"></div>
+<div id="site-nav"></div>
+
+<section class="page-hero container" style="padding-top:48px; border-bottom:0">
+  <div style="max-width:420px; margin:64px auto 0">
+    <span class="eyebrow">CREATE ACCOUNT</span>
+    <h1 style="font-size:clamp(40px,5vw,56px); margin:18px 0 12px">Find the<br>edge.</h1>
+    <p style="font-size:15px; margin-bottom:32px">Start free. No card. No commitment.</p>
+
+    <form id="signup-form" method="post" action="/api/auth/signup" autocomplete="on" novalidate
+          style="display:flex; flex-direction:column; gap:18px">
+
+      <label style="display:flex; flex-direction:column; gap:6px">
+        <span class="eyebrow">EMAIL</span>
+        <input type="email" name="email" required autocomplete="email"
+               maxlength="254" inputmode="email"
+               style="background:var(--bg-1); border:1px solid var(--line-strong); border-radius:8px; padding:12px 14px; font-size:15px; color:var(--fg)">
+      </label>
+
+      <label style="display:flex; flex-direction:column; gap:6px">
+        <span class="eyebrow">PASSWORD <span style="color:var(--fg-mute); letter-spacing:0">&mdash; 12+ chars, letters &amp; numbers</span></span>
+        <input type="password" name="password" required autocomplete="new-password"
+               minlength="12" maxlength="256"
+               style="background:var(--bg-1); border:1px solid var(--line-strong); border-radius:8px; padding:12px 14px; font-size:15px; color:var(--fg); font-family:var(--font-mono)">
+      </label>
+
+      <label style="display:flex; gap:10px; font-size:13px; color:var(--fg-dim); align-items:flex-start">
+        <input type="checkbox" name="agree" required style="margin-top:3px">
+        <span>I&rsquo;m 21+ and I agree to the <a href="legal.html#terms" rel="noopener noreferrer" style="color:var(--accent)">Terms</a> and <a href="legal.html#privacy" rel="noopener noreferrer" style="color:var(--accent)">Privacy Policy</a>. Pinnacle is for analytics only and does not accept wagers.</span>
+      </label>
+
+      <div data-form-msg style="font-size:13px; color:var(--rose); min-height:18px"></div>
+
+      <button type="submit" class="btn btn-primary btn-lg" style="justify-content:center">Create account</button>
+
+      <div style="font-size:13px; color:var(--fg-dim); text-align:center">
+        Already have an account? <a href="login.html" rel="noopener noreferrer" style="color:var(--accent)">Sign in &rarr;</a>
+      </div>
+    </form>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="assets/chrome.js"></script>
+<script src="assets/auth.js"></script>
+</body>
+</html>

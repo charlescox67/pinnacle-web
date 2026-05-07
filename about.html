@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; manifest-src 'self'; upgrade-insecure-requests">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>About — Pinnacle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+.about-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px; align-items: start; }
+@media (max-width: 820px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } }
+.values-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; margin-top: 48px; }
+@media (max-width: 640px) { .values-grid { grid-template-columns: 1fr; } }
+.value-card { padding: 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bg-1); }
+.value-card:nth-child(2n) { border-right: 0; }
+.value-card h4 { font-family: var(--font-display); font-size: 18px; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 8px; }
+.value-card p { font-size: 14px; color: var(--fg-dim); line-height: 1.55; }
+.value-num { font-family: var(--font-mono); font-size: 10px; color: var(--fg-mute); letter-spacing: 0.2em; margin-bottom: 16px; display: block; }
+.role-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; }
+@media (max-width: 820px) { .role-grid { grid-template-columns: 1fr; } }
+.role-card { padding: 32px 28px; border-right: 1px solid var(--line); background: var(--bg-1); display: flex; flex-direction: column; }
+.role-card:last-child { border-right: 0; }
+@media (max-width: 820px) { .role-card { border-right: 0; border-bottom: 1px solid var(--line); } .role-card:last-child { border-bottom: 0; } }
+.role-dept { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--accent); margin-bottom: 12px; display: block; }
+.role-card h3 { font-family: var(--font-display); font-size: 20px; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 8px; }
+.role-card p { font-size: 14px; color: var(--fg-dim); flex: 1; line-height: 1.55; margin-bottom: 24px; }
+.role-meta { display: flex; gap: 8px; margin-bottom: 20px; }
+.stat-block { border: 1px solid var(--line); border-radius: 8px; padding: 24px; background: var(--bg-1); }
+.stat-block .v { font-family: var(--font-display); font-size: 40px; font-weight: 500; letter-spacing: -0.03em; color: var(--accent); }
+.stat-block .l { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--fg-mute); margin-top: 6px; }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div id="site-nav"></div>
+
+<section class="page-hero container" id="about">
+  <span class="eyebrow">ABOUT</span>
+  <h1>Built by<br>analysts,<br>for <em>analysts.</em></h1>
+  <p>We built Pinnacle because the edge exists in every market &mdash; but finding it required six browser tabs, three spreadsheets, and two hours. We compressed that into one terminal.</p>
+</section>
+
+<section class="section container" style="padding-top:64px">
+  <div class="about-grid">
+    <div>
+      <span class="eyebrow" style="display:block; margin-bottom:16px">OUR MISSION</span>
+      <h2 style="font-family:var(--font-display); font-size:clamp(28px,3.5vw,44px); font-weight:500; letter-spacing:-0.025em; line-height:1.1; margin-bottom:20px">Give every serious bettor access to the same analytics that professionals use.</h2>
+      <p style="color:var(--fg-dim); font-size:16px; line-height:1.6; max-width:520px">The sportsbook industry spends billions modeling lines. Pinnacle exists to make the other side of that equation equally well-armed. We remove the vig, surface every +EV line, and flag every arb before the window closes.</p>
+      <p style="color:var(--fg-dim); font-size:16px; line-height:1.6; max-width:520px; margin-top:16px">Pinnacle does not accept wagers. We are an analytics-only platform &mdash; the Bloomberg Terminal of sports betting data.</p>
+
+      <div style="margin-top:40px; display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+        <div class="stat-block"><div class="v">15+</div><div class="l">Books tracked</div></div>
+        <div class="stat-block"><div class="v">2s</div><div class="l">Refresh rate</div></div>
+        <div class="stat-block"><div class="v">50M+</div><div class="l">Daily comparisons</div></div>
+        <div class="stat-block"><div class="v">10</div><div class="l">Sports covered</div></div>
+      </div>
+    </div>
+    <div>
+      <span class="eyebrow" style="display:block; margin-bottom:16px">THE STORY</span>
+      <p style="color:var(--fg-dim); font-size:15px; line-height:1.7; margin-bottom:16px">Pinnacle started as an internal tool. Our founders were building sports models on the side &mdash; running no-vig calculators in Excel, manually comparing DraftKings to FanDuel in separate tabs, and logging CLV by hand in Notion.</p>
+      <p style="color:var(--fg-dim); font-size:15px; line-height:1.7; margin-bottom:16px">The math was sound. The workflow was brutal.</p>
+      <p style="color:var(--fg-dim); font-size:15px; line-height:1.7; margin-bottom:16px">We built the first version of the terminal for personal use. Then showed it to some friends who bet seriously. Then those friends started asking for access. After the twentieth request we realized: this should exist for everyone.</p>
+      <p style="color:var(--fg-dim); font-size:15px; line-height:1.7">We&rsquo;re a small, technical team. We don&rsquo;t take outside capital. We don&rsquo;t run ads. Pinnacle is funded by the people who use it.</p>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <span class="value-num">01</span>
+          <h4>Math over narrative</h4>
+          <p>Every number is auditable. No black boxes. No vibes-based "picks."</p>
+        </div>
+        <div class="value-card">
+          <span class="value-num">02</span>
+          <h4>Speed matters</h4>
+          <p>Arbs close in seconds. We refresh every 2 seconds and surface opportunities before they vanish.</p>
+        </div>
+        <div class="value-card">
+          <span class="value-num">03</span>
+          <h4>Security first</h4>
+          <p>Built like a fintech app. Strict CSP, HMAC sessions, zero plaintext credentials.</p>
+        </div>
+        <div class="value-card">
+          <span class="value-num">04</span>
+          <h4>Responsible use</h4>
+          <p>We&rsquo;re analytics only. We always include problem gambling resources. No dark patterns.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section container" id="careers" style="border-top:1px solid var(--line)">
+  <div class="section-head">
+    <div><span class="eyebrow">CAREERS</span></div>
+    <div>
+      <h2>Work on the<br>hardest problem<br>in sports data.</h2>
+      <p style="margin-top:20px">We&rsquo;re a small, distributed team. Every role has real ownership and ships to production within the first week.</p>
+    </div>
+  </div>
+
+  <div class="role-grid">
+    <div class="role-card">
+      <span class="role-dept">Engineering</span>
+      <h3>Full-Stack Engineer</h3>
+      <p>Own the terminal and API layer. You&rsquo;ll work across the stack &mdash; serverless functions, real-time data pipelines, and a performance-critical frontend.</p>
+      <div class="role-meta">
+        <span class="tag">REMOTE</span>
+        <span class="tag">FULL-TIME</span>
+      </div>
+      <a href="contact.html" rel="noopener noreferrer" class="btn btn-ghost" style="align-self:flex-start">Apply &rarr;</a>
+    </div>
+    <div class="role-card">
+      <span class="role-dept">Data</span>
+      <h3>Data Engineer</h3>
+      <p>Build and maintain the odds ingestion pipeline. Own the normalization layer, snapshot system, and line history store.</p>
+      <div class="role-meta">
+        <span class="tag">REMOTE</span>
+        <span class="tag">FULL-TIME</span>
+      </div>
+      <a href="contact.html" rel="noopener noreferrer" class="btn btn-ghost" style="align-self:flex-start">Apply &rarr;</a>
+    </div>
+    <div class="role-card">
+      <span class="role-dept">Growth</span>
+      <h3>Growth Lead</h3>
+      <p>Own acquisition and retention for a product with strong word-of-mouth. Comfort with quantitative channels and community-led growth.</p>
+      <div class="role-meta">
+        <span class="tag">REMOTE</span>
+        <span class="tag">FULL-TIME</span>
+      </div>
+      <a href="contact.html" rel="noopener noreferrer" class="btn btn-ghost" style="align-self:flex-start">Apply &rarr;</a>
+    </div>
+  </div>
+
+  <p style="margin-top:32px; color:var(--fg-dim); font-size:14px">Don&rsquo;t see your role? We hire for exceptional people before specific needs. <a href="contact.html" rel="noopener noreferrer" style="color:var(--accent)">Reach out anyway &rarr;</a></p>
+</section>
+
+<div id="site-footer"></div>
+<script src="assets/chrome.js"></script>
+</body>
+</html>

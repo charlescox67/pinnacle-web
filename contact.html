@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; manifest-src 'self'; upgrade-insecure-requests">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>Contact — Pinnacle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+.contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: start; }
+@media (max-width: 820px) { .contact-grid { grid-template-columns: 1fr; gap: 48px; } }
+.form-field { display: flex; flex-direction: column; gap: 6px; }
+.form-label { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-mute); }
+.form-input, .form-select, .form-textarea {
+  background: var(--bg-1); border: 1px solid var(--line-strong); border-radius: 8px;
+  padding: 12px 14px; font-size: 15px; color: var(--fg); font-family: var(--font-body);
+  outline: none; transition: border-color 0.15s;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--accent-line); }
+.form-select { appearance: none; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235a655d' stroke-width='2'><path d='M6 9l6 6 6-6'/></svg>"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px; cursor: pointer; }
+.form-textarea { min-height: 140px; resize: vertical; line-height: 1.55; }
+.contact-aside { display: flex; flex-direction: column; gap: 24px; }
+.contact-block { border: 1px solid var(--line); border-radius: 10px; padding: 24px; background: var(--bg-1); }
+.contact-block h4 { font-family: var(--font-display); font-size: 16px; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 8px; }
+.contact-block p { font-size: 14px; color: var(--fg-dim); line-height: 1.55; }
+.contact-block a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div id="site-nav"></div>
+
+<section class="page-hero container">
+  <span class="eyebrow">CONTACT</span>
+  <h1>Let&rsquo;s talk<br><em>edge.</em></h1>
+  <p>Questions, partnerships, press, or career inquiries &mdash; we read everything and reply within 48 hours.</p>
+</section>
+
+<section class="section container" style="padding-top:48px">
+  <div class="contact-grid">
+    <div class="contact-aside">
+      <div class="contact-block">
+        <h4>General &amp; Support</h4>
+        <p>Account questions, billing, terminal bugs, or anything else. We aim for same-day replies on business days.</p>
+      </div>
+      <div class="contact-block">
+        <h4>Press &amp; Media</h4>
+        <p>We&rsquo;re happy to talk to journalists covering sports tech, gambling regulation, or data journalism. Use subject line "Press."</p>
+      </div>
+      <div class="contact-block">
+        <h4>Partnerships &amp; API</h4>
+        <p>Integration requests, data partnerships, and Enterprise (Elite) plans with custom volume limits. Include your use case.</p>
+      </div>
+      <div class="contact-block">
+        <h4>Careers</h4>
+        <p>Open roles are listed on the <a href="about.html#careers" rel="noopener noreferrer">About page</a>. Attach a short note on what you&rsquo;d build first.</p>
+      </div>
+    </div>
+
+    <div>
+      <form id="contact-form" method="post" action="/api/contact" novalidate
+            style="display:flex; flex-direction:column; gap:18px">
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px">
+          <div class="form-field">
+            <label class="form-label" for="contact-name">Name</label>
+            <input id="contact-name" type="text" name="name" required maxlength="120" autocomplete="name" class="form-input" placeholder="Your name">
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="contact-email">Email</label>
+            <input id="contact-email" type="email" name="email" required maxlength="254" autocomplete="email" inputmode="email" class="form-input" placeholder="you@example.com">
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="contact-subject">Subject</label>
+          <select id="contact-subject" name="subject" class="form-select">
+            <option value="general">General / Support</option>
+            <option value="press">Press &amp; Media</option>
+            <option value="partnerships">Partnerships</option>
+            <option value="api">API / Enterprise</option>
+            <option value="careers">Careers</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="contact-message">Message</label>
+          <textarea id="contact-message" name="message" required minlength="20" maxlength="4000" class="form-textarea" placeholder="Tell us what&rsquo;s on your mind..."></textarea>
+        </div>
+
+        <div data-form-msg style="font-size:13px; min-height:18px; color:var(--rose)"></div>
+        <div data-form-success style="display:none; font-size:14px; color:var(--accent); background:var(--accent-soft); border:1px solid var(--accent-line); border-radius:8px; padding:14px 16px;">
+          Message sent. We&rsquo;ll get back to you within 48 hours.
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg" style="align-self:flex-start">Send message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="assets/chrome.js"></script>
+<script src="assets/contact.js"></script>
+</body>
+</html>

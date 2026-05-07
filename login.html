@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; manifest-src 'self'; upgrade-insecure-requests">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Sign in — Pinnacle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="grain"></div>
+<div id="site-nav"></div>
+
+<section class="page-hero container" style="padding-top:48px; border-bottom:0">
+  <div style="max-width:420px; margin:64px auto 0">
+    <span class="eyebrow">SIGN IN</span>
+    <h1 style="font-size:clamp(40px,5vw,56px); margin:18px 0 12px">Welcome<br>back.</h1>
+    <p style="font-size:15px; margin-bottom:32px">Open the terminal. Pick up where you left off.</p>
+
+    <form id="login-form" method="post" action="/api/auth/login" autocomplete="on" novalidate
+          style="display:flex; flex-direction:column; gap:18px">
+
+      <label style="display:flex; flex-direction:column; gap:6px">
+        <span class="eyebrow">EMAIL</span>
+        <input type="email" name="email" required autocomplete="username"
+               maxlength="254" inputmode="email"
+               style="background:var(--bg-1); border:1px solid var(--line-strong); border-radius:8px; padding:12px 14px; font-size:15px; color:var(--fg)">
+      </label>
+
+      <label style="display:flex; flex-direction:column; gap:6px">
+        <span class="eyebrow">PASSWORD</span>
+        <input type="password" name="password" required autocomplete="current-password"
+               minlength="12" maxlength="256"
+               style="background:var(--bg-1); border:1px solid var(--line-strong); border-radius:8px; padding:12px 14px; font-size:15px; color:var(--fg); font-family:var(--font-mono)">
+      </label>
+
+      <div data-form-msg style="font-size:13px; color:var(--rose); min-height:18px"></div>
+
+      <button type="submit" class="btn btn-primary btn-lg" style="justify-content:center">Sign in</button>
+
+      <div style="display:flex; justify-content:space-between; font-size:13px; color:var(--fg-dim)">
+        <a href="reset.html" rel="noopener noreferrer" style="color:var(--fg-dim)">Forgot password?</a>
+        <a href="signup.html" rel="noopener noreferrer" style="color:var(--accent)">Create account &rarr;</a>
+      </div>
+    </form>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="assets/chrome.js"></script>
+<script src="assets/auth.js"></script>
+</body>
+</html>
