@@ -703,7 +703,7 @@ function getAlertCount(){return checkAlerts(gamesFor(appState.currentSport)).len
 const VALID_SPORTS_CLIENT=new Set(['nba','nfl','mlb','nhl','ufc','pga','f1']);
 let _liveLoading=false;
 let _lastLoad={};
-const LIVE_CACHE_TTL=5*60*1000; // 5 minutes
+const LIVE_CACHE_TTL=2*60*60*1000; // 2 hours
 
 function saveLiveCache(sport,games){
   try{localStorage.setItem('pinnacle_live_'+sport,JSON.stringify({ts:Date.now(),games}));}catch{}
@@ -728,7 +728,7 @@ async function loadLiveGames(sport){
   }
 
   const now=Date.now();
-  if(_lastLoad[sport]&&now-_lastLoad[sport]<30_000)return;
+  if(_lastLoad[sport]&&now-_lastLoad[sport]<10*60_000)return;
   if(_liveLoading)return;
   _liveLoading=true;
   _lastLoad[sport]=now;
