@@ -703,9 +703,30 @@ function getAlertCount(){return checkAlerts(gamesFor(appState.currentSport)).len
 const VALID_SPORTS_CLIENT=new Set(['nba','nfl','mlb','nhl','ufc','pga','f1']);
 let _liveLoading=false;
 let _lastLoad={};
+const LIVE_CACHE_TTL=5*60*1000; // 5 minutes
+
+function saveLiveCache(sport,games){
+  try{localStorage.setItem('pinnacle_live_'+sport,JSON.stringify({ts:Date.now(),games}));}catch{}
+}
+function loadLiveCache(sport){
+  try{
+    const raw=localStorage.getItem('pinnacle_live_'+sport);
+    if(!raw)return null;
+    const {ts,games}=JSON.parse(raw);
+    if(Date.now()-ts>LIVE_CACHE_TTL)return null;
+    return Array.isArray(games)&&games.length?games:null;
+  }catch{return null;}
+}
 
 async function loadLiveGames(sport){
   if(!VALID_SPORTS_CLIENT.has(sport))return;
+
+  // Restore from cache immediately so there's no flash of mock data
+  if(!LIVE_GAMES[sport]){
+    const cached=loadLiveCache(sport);
+    if(cached){LIVE_GAMES[sport]=cached;renderApp();}
+  }
+
   const now=Date.now();
   if(_lastLoad[sport]&&now-_lastLoad[sport]<30_000)return;
   if(_liveLoading)return;
@@ -723,7 +744,7 @@ async function loadLiveGames(sport){
     const data=await res.json();
     if(!Array.isArray(data?.games)||!data.games.length)return;
     const mapped=data.games.map(g=>mapApiGame(g,sport)).filter(Boolean);
-    if(mapped.length){LIVE_GAMES[sport]=mapped;renderApp();}
+    if(mapped.length){LIVE_GAMES[sport]=mapped;saveLiveCache(sport,mapped);renderApp();}
   }catch{}
   finally{_liveLoading=false;}
 }
